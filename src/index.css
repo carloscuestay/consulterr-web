@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --marina-600: #2e6da4;
+    --marina-800: #1a3f6b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-white text-marina-900 font-sans antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'cv11' 1;
+  }
+
+  ::selection {
+    @apply bg-marina-600 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-marina-600 ring-offset-2 ring-offset-white rounded-sm;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight text-marina-900;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  /* Scrollbar discreto */
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: #F4F8FC; }
+  ::-webkit-scrollbar-thumb {
+    background: #B8D0E8; border-radius: 99px; border: 3px solid #F4F8FC;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #8FB3D6; }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-marina-600;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
+           transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-marina-800 text-white hover:bg-marina-600 shadow-card hover:shadow-lift;
+  }
+  .btn-ghost {
+    @apply btn border border-marina-300 text-marina-800 hover:border-marina-600 hover:bg-marina-50;
+  }
+  .btn-light {
+    @apply btn bg-white text-marina-800 hover:bg-marina-100 shadow-card;
+  }
+  .btn-outline-light {
+    @apply btn border border-white/35 text-white hover:bg-white/10 hover:border-white/60;
+  }
+
+  .card {
+    @apply rounded-2xl border border-marina-200/70 bg-white p-6 shadow-card
+           transition-all duration-300;
+  }
+  .card-hover {
+    @apply card hover:-translate-y-1 hover:border-marina-300 hover:shadow-lift;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px
+           after:origin-right after:scale-x-0 after:bg-current after:transition-transform
+           hover:after:origin-left hover:after:scale-x-100;
+  }
+
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .rule-top {
+    @apply border-t border-marina-200;
+  }
+
+  .prose-legal {
+    @apply prose prose-slate max-w-none
+           prose-headings:font-serif prose-headings:text-marina-900
+           prose-a:text-marina-600 prose-a:no-underline hover:prose-a:underline
+           prose-strong:text-marina-900 prose-li:marker:text-marina-400;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+    mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  }
+}
