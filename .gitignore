@@ -1,0 +1,40 @@
+# Dependencias
+node_modules/
+.pnp
+.pnp.js
+
+# Compilación
+dist/
+dist-ssr/
+build/
+*.local
+
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Registros
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Python (generación de la marca)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporales del kit de marca
+marca/manual/paginas/
