@@ -44,6 +44,12 @@
 
   p { text-wrap: pretty; }
 
+  /* Barra de progreso del carrusel */
+  @keyframes barra {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+
   /* Scrollbar discreto */
   ::-webkit-scrollbar { width: 11px; height: 11px; }
   ::-webkit-scrollbar-track { background: #F4F8FC; }

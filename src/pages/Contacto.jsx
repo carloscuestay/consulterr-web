@@ -60,7 +60,7 @@ export default function Contacto() {
       f.mensaje,
       '',
       '—',
-      'Enviado desde el formulario de contacto de consulterr.com',
+      'Enviado desde el formulario de contacto de consulterr.com.co',
     ].join('\n')
 
     window.location.href =

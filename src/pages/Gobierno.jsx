@@ -1,203 +1,167 @@
+import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import Icon from '../components/Icon'
 import CTA from '../components/CTA'
 import { useSeo } from '../hooks/useSeo'
-import { empresa, gobierno, composicionAccionaria } from '../data/empresa'
+import { empresa, gobierno } from '../data/empresa'
 
 export default function Gobierno() {
   useSeo({
-    title: 'Gobierno corporativo',
+    title: 'Gobierno y cumplimiento',
     description:
-      'Órganos sociales, mayorías decisorias, controles estatutarios, libros sociales y cláusula compromisoria de CONSULTERR S.A.S. conforme a la Ley 1258 de 2008.',
+      'Independencia, manejo de conflictos de interés, régimen anticorrupción, protección de datos y gestión documental de CONSULTERR S.A.S.',
     path: '/gobierno-corporativo',
   })
 
   return (
     <>
       <PageHero
-        eyebrow="Transparencia societaria"
-        title="Gobierno corporativo"
-        lead={`Estructura de decisión, controles y garantías de ${empresa.sigla}, conforme a los estatutos aprobados en el acto de constitución y a la ${empresa.marcoLegal}.`}
+        eyebrow="Transparencia y control"
+        title="Gobierno y cumplimiento"
+        lead={`Cómo se administra ${empresa.sigla}, qué compromisos de conducta asume frente a cada encargo y qué documentación remite a las entidades que la contratan.`}
       />
 
-      {/* Órganos */}
+      {/* Administración */}
       <section className="section">
         <div className="container-x">
           <Reveal className="max-w-2xl">
-            <p className="eyebrow"><span className="h-px w-6 bg-marina-400" />Artículo 8°</p>
-            <h2 className="mt-5 text-[2rem] leading-[1.15] sm:text-[2.5rem]">Órganos sociales</h2>
+            <p className="eyebrow"><span className="h-px w-6 bg-marina-400" />Administración</p>
+            <h2 className="mt-5 text-[2rem] leading-[1.15] sm:text-[2.5rem]">
+              Quién obliga a la sociedad y quién responde por el entregable
+            </h2>
           </Reveal>
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {gobierno.organos.map((o, i) => (
+            {gobierno.administracion.map((o, i) => (
               <Reveal key={o.nombre} delay={i * 100} className="card">
-                <span className="eyebrow">{o.rol}</span>
-                <h3 className="mt-3 text-[1.4rem] leading-snug">{o.nombre}</h3>
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-marina-600 text-white">
+                  <Icon name={o.icono} className="h-5 w-5" />
+                </span>
+                <span className="eyebrow mt-5 block">{o.rol}</span>
+                <h3 className="mt-2 text-[1.4rem] leading-snug">{o.nombre}</h3>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-marina-700/85">{o.detalle}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={200} className="mt-8">
+            <div className="rounded-2xl border-l-2 border-marina-500 bg-marina-50/70 py-6 pl-7 pr-6">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-marina-500">
+                Información societaria y financiera
+              </p>
+              <p className="mt-3 max-w-4xl text-[15px] leading-relaxed text-marina-800">
+                Por decisión de la compañía, este sitio no publica información patrimonial ni de
+                composición societaria. Los datos que exijan los pliegos —capacidad jurídica,
+                financiera y organizacional— se acreditan ante la entidad contratante con los
+                documentos oficiales correspondientes, a solicitud y por los canales formales.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Compromisos de conducta */}
+      <section className="section bg-marina-50/70">
+        <div className="container-x">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow"><span className="h-px w-6 bg-marina-400" />Compromisos de conducta</p>
+            <h2 className="mt-5 text-[2rem] leading-[1.15] sm:text-[2.5rem]">
+              Reglas que aplican a todos los encargos
+            </h2>
+            <p className="mt-5 text-[15.5px] leading-relaxed text-marina-700/85">
+              No dependen de la cuantía ni del cliente: hacen parte de cada propuesta y de cada
+              contrato que firma la sociedad.
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {gobierno.compromisos.map((c, i) => (
+              <Reveal key={c.titulo} delay={i * 60} className="card-hover">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-marina-100 text-marina-600">
+                  <Icon name={c.icono} className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 text-lg">{c.titulo}</h3>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-marina-700/80">{c.texto}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Mayorías */}
-      <section className="section bg-marina-50/70">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
-          <Reveal className="lg:col-span-4">
-            <p className="eyebrow"><span className="h-px w-6 bg-marina-400" />Artículo 12°</p>
-            <h2 className="mt-5 text-[2rem] leading-[1.15] sm:text-[2.4rem]">Quórum y mayorías</h2>
-            <p className="mt-6 text-[15.5px] leading-relaxed text-marina-700/85">
-              El quórum deliberatorio exige la mayoría absoluta de las acciones suscritas. Las
-              decisiones estructurales requieren mayorías calificadas, de modo que ningún
-              accionista —cada uno con el 25%— pueda imponerlas por sí solo.
-            </p>
-          </Reveal>
-
-          <Reveal delay={120} className="lg:col-span-8">
-            <div className="overflow-hidden rounded-2xl border border-marina-200 bg-white shadow-card">
-              <table className="w-full text-left text-sm">
-                <caption className="sr-only">Mayorías decisorias por tipo de asunto</caption>
-                <thead>
-                  <tr className="border-b border-marina-200 bg-marina-50/80">
-                    <th scope="col" className="px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-marina-600">
-                      Asunto
-                    </th>
-                    <th scope="col" className="px-6 py-3.5 text-right text-[11px] font-semibold uppercase tracking-[0.14em] text-marina-600">
-                      Mayoría requerida
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-marina-100">
-                  {gobierno.mayorias.map((m) => (
-                    <tr key={m.asunto} className="transition-colors hover:bg-marina-50/50">
-                      <td className="px-6 py-4 text-marina-800">{m.asunto}</td>
-                      <td className="whitespace-nowrap px-6 py-4 text-right font-semibold text-marina-600">
-                        {m.umbral}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Controles */}
-      <section className="section">
-        <div className="container-x grid gap-12 lg:grid-cols-12">
-          <Reveal className="lg:col-span-5">
-            <p className="eyebrow"><span className="h-px w-6 bg-marina-400" />Artículos 17°, 22° y 23°</p>
-            <h2 className="mt-5 text-[2rem] leading-[1.15] sm:text-[2.4rem]">
-              Controles y prohibiciones estatutarias
-            </h2>
-            <p className="mt-6 text-[15.5px] leading-relaxed text-marina-700/85">
-              Los estatutos incorporan límites expresos a la actuación de los administradores y
-              mecanismos de protección del patrimonio social y de los accionistas minoritarios.
-            </p>
-
-            <div className="mt-8 rounded-2xl border border-marina-200 bg-marina-50/70 p-7">
-              <h3 className="flex items-center gap-2.5 text-lg">
-                <Icon name="gavel" className="h-5 w-5 text-marina-600" />
-                Cláusula compromisoria
-              </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-marina-700/85">
-                Toda controversia relativa al contrato de sociedad se resuelve ante un Tribunal de
-                Arbitramento de tres (3) árbitros, designados de común acuerdo o, a falta de
-                acuerdo, por el Centro de Conciliación y Arbitraje de la Cámara de Comercio de
-                Cartagena de Indias. El Tribunal decide en derecho y sesiona en Cartagena.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={120} className="lg:col-span-7">
-            <ul className="space-y-3">
-              {gobierno.controles.map((c) => (
-                <li
-                  key={c}
-                  className="flex gap-4 rounded-xl border border-marina-200/70 bg-white px-5 py-4 shadow-card"
-                >
-                  <Icon name="shield-check" className="mt-0.5 h-5 w-5 shrink-0 text-marina-500" />
-                  <span className="text-[14.5px] leading-relaxed text-marina-800">{c}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Composición + libros */}
+      {/* Documentación y controversias */}
       <section className="section bg-marina-900 text-white">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <p className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-marina-300">
               <span className="h-px w-6 bg-marina-400" />
-              Artículo 5° · Capital
+              Para procesos de selección
             </p>
             <h2 className="mt-5 text-[2rem] leading-[1.15] text-white sm:text-[2.4rem]">
-              Capital y composición accionaria
+              Documentación que remitimos
             </h2>
             <p className="mt-5 text-[15.5px] leading-relaxed text-marina-200/85">
-              Capital autorizado, suscrito y pagado por{' '}
-              <strong className="font-semibold text-white">$100.000.000 COP</strong>, representado
-              en 100.000 acciones ordinarias de valor nominal $1.000 cada una, pagado en su
-              totalidad en el acto de constitución.
+              Indíquenos el proceso y el pliego y preparamos el paquete completo dentro del término
+              de la convocatoria.
             </p>
-
-            <ul className="mt-9 space-y-3">
-              {composicionAccionaria.map((a) => (
+            <ul className="mt-9 grid gap-3 sm:grid-cols-2">
+              {gobierno.documentos.map((d) => (
                 <li
-                  key={a.nombre}
-                  className="flex items-center gap-5 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4"
+                  key={d}
+                  className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4"
                 >
-                  <span className="w-14 shrink-0 font-serif text-2xl text-white">{a.participacion}%</span>
-                  <span className="flex-1">
-                    <span className="block text-[14.5px] font-medium text-white">{a.nombre}</span>
-                    <span className="mt-0.5 block text-[12.5px] text-marina-300/75">{a.tipo}</span>
-                  </span>
+                  <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-marina-400" />
+                  <span className="text-[14px] leading-snug text-marina-200/90">{d}</span>
                 </li>
               ))}
             </ul>
+            <Link to="/contacto" className="btn-light mt-9">
+              Solicitar documentación
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Link>
           </Reveal>
 
           <Reveal delay={120} className="lg:col-span-5">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-7">
               <h3 className="flex items-center gap-2.5 text-lg text-white">
-                <Icon name="file-text" className="h-5 w-5 text-marina-300" />
-                Libros sociales
+                <Icon name="gavel" className="h-5 w-5 text-marina-300" />
+                {gobierno.controversias.titulo}
               </h3>
-              <ul className="mt-5 space-y-3">
-                {gobierno.libros.map((l) => (
-                  <li key={l} className="flex gap-3 text-[14px] text-marina-200/85">
-                    <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-marina-400" />
-                    {l}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 border-t border-white/10 pt-5 text-[13px] leading-relaxed text-marina-300/75">
-                Registrados ante la {empresa.registro.camara}. El período fiscal va del 1° de enero
-                al 31 de diciembre de cada año.
+              <p className="mt-4 text-[14px] leading-relaxed text-marina-200/85">
+                {gobierno.controversias.texto}
               </p>
             </div>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.04] p-7">
               <h3 className="flex items-center gap-2.5 text-lg text-white">
-                <Icon name="scale" className="h-5 w-5 text-marina-300" />
-                Reserva legal
+                <Icon name="file-text" className="h-5 w-5 text-marina-300" />
+                Canal de atención
               </h3>
               <p className="mt-4 text-[14px] leading-relaxed text-marina-200/85">
-                Apropiación anual mínima del 10% de las utilidades líquidas hasta alcanzar el 50%
-                del capital suscrito. No se distribuyen utilidades mientras existan pérdidas de
-                ejercicios anteriores que afecten el capital.
+                Consultas, reclamos y solicitudes de información sobre tratamiento de datos
+                personales o conducta empresarial:{' '}
+                <a
+                  href={`mailto:${empresa.contacto.email}`}
+                  className="font-semibold text-white underline decoration-marina-400 underline-offset-4"
+                >
+                  {empresa.contacto.email}
+                </a>
+                .
               </p>
+              <Link
+                to="/legal/tratamiento-de-datos"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-marina-300 transition-all hover:gap-3 hover:text-white"
+              >
+                Política de tratamiento de datos
+                <Icon name="arrow-right" className="h-4 w-4" />
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
       <CTA
-        titulo="¿Requiere documentación societaria para un proceso de contratación?"
-        texto="Le remitimos certificado de existencia y representación legal, estados financieros y demás soportes exigidos por el pliego."
+        titulo="¿Requiere verificar nuestra capacidad para un proceso?"
+        texto="Indíquenos el número del proceso y la entidad, y remitimos la documentación exigida por el pliego."
       />
     </>
   )

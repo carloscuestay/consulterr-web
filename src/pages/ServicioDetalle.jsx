@@ -3,8 +3,10 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import Icon from '../components/Icon'
 import CTA from '../components/CTA'
+import Imagen from '../components/Imagen'
 import { useSeo } from '../hooks/useSeo'
 import { getServicio, servicios, metodologia } from '../data/servicios'
+import { imagenServicio } from '../data/imagenes'
 
 export default function ServicioDetalle() {
   const { slug } = useParams()
@@ -53,6 +55,16 @@ export default function ServicioDetalle() {
       <section className="section">
         <div className="container-x grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-8">
+            <Reveal className="mb-10">
+              <Imagen
+                img={imagenServicio(s.slug)}
+                aspecto="3 / 2"
+                prioridad
+                sizes="(max-width: 1024px) 100vw, 62vw"
+                className="w-full rounded-2xl border border-marina-200/70 shadow-card"
+              />
+            </Reveal>
+
             <Reveal>
               <div className="rounded-2xl border-l-2 border-marina-500 bg-marina-50/70 py-6 pl-7 pr-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-marina-500">

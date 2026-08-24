@@ -9,7 +9,7 @@ const NAV = [
   { to: '/nosotros', label: 'Nosotros' },
   { to: '/servicios', label: 'Servicios', mega: true },
   { to: '/metodologia', label: 'Metodología' },
-  { to: '/gobierno-corporativo', label: 'Gobierno corporativo' },
+  { to: '/gobierno-corporativo', label: 'Gobierno y cumplimiento' },
   { to: '/contacto', label: 'Contacto' },
 ]
 

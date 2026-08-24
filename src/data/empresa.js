@@ -1,13 +1,22 @@
 /**
  * Datos institucionales de CONSULTERR S.A.S.
  * ------------------------------------------------------------------
- * Fuente: Documento privado de constitución (Ley 1258 de 2008), 2026.
+ * ALCANCE DE LO QUE SE PUBLICA
  *
- * NOTA DE PROTECCIÓN DE DATOS (Ley 1581 de 2012):
- * Este archivo contiene únicamente información societaria de naturaleza
- * pública —la que consta en el Registro Mercantil y es consultable por
- * cualquier persona—. No se publican números de cédula, direcciones de
- * residencia ni datos personales de accionistas o administradores.
+ * Este archivo contiene únicamente información de presentación comercial e
+ * identificación de la sociedad. Por decisión de la compañía NO se publica
+ * información patrimonial ni de composición societaria: capital autorizado,
+ * suscrito o pagado, número o valor de acciones, identidad o participación de
+ * accionistas, mayorías decisorias expresadas en porcentaje de acciones ni
+ * reservas.
+ *
+ * Tampoco se publican datos personales de accionistas o administradores
+ * (documentos de identidad, direcciones de residencia), conforme a la
+ * Ley 1581 de 2012 y el Decreto 1074 de 2015.
+ *
+ * Quien requiera esa información para un proceso de contratación debe
+ * solicitarla por los canales formales: se remite el certificado de existencia
+ * y representación legal expedido por la Cámara de Comercio.
  */
 
 export const empresa = {
@@ -18,7 +27,6 @@ export const empresa = {
   claim: 'Interventoría, consultoría y asesoría público-privada',
   naturaleza: 'Sociedad por Acciones Simplificada',
   marcoLegal: 'Ley 1258 de 2008',
-  anioConstitucion: 2026,
   duracion: 'Indefinida',
   domicilio: {
     ciudad: 'Cartagena de Indias',
@@ -27,14 +35,6 @@ export const empresa = {
     direccion: 'Nuevo Paraguay, Mz. 3 Lote 16',
     completo: 'Nuevo Paraguay Mz. 3 Lote 16, Cartagena de Indias, Bolívar, Colombia',
   },
-  capital: {
-    autorizado: 100000000,
-    suscrito: 100000000,
-    pagado: 100000000,
-    acciones: 100000,
-    valorNominal: 1000,
-    moneda: 'COP',
-  },
   registro: {
     camara: 'Cámara de Comercio de Cartagena',
     // Se diligencian una vez surtida la inscripción en el Registro Mercantil.
@@ -42,9 +42,7 @@ export const empresa = {
     matricula: 'En trámite de inscripción',
   },
   contacto: {
-    // Correo de contacto habilitado por la sociedad.
-    email: 'contacto@consulterr.com',
-    emailAlterno: 'carloscuestay@gmail.com',
+    email: 'gerencia@consulterr.com.co',
     // Sustituya por la línea corporativa cuando esté habilitada.
     telefono: '+57 300 000 0000',
     whatsapp: '+573000000000',
@@ -59,7 +57,7 @@ export const empresa = {
     youtube: 'https://www.youtube.com/@consulterr',
   },
   sitio: {
-    dominio: 'https://www.consulterr.com',
+    dominio: 'https://www.consulterr.com.co',
     nombre: 'CONSULTERR S.A.S.',
   },
 }
@@ -112,81 +110,135 @@ export const valores = [
   },
 ]
 
+/**
+ * Gobierno y cumplimiento — se describen los compromisos de conducta y los
+ * controles internos de la firma, no su estructura patrimonial.
+ */
 export const gobierno = {
-  organos: [
+  administracion: [
     {
-      nombre: 'Asamblea General de Accionistas',
-      rol: 'Máximo órgano de dirección',
+      nombre: 'Representación legal',
+      rol: 'Quién obliga a la sociedad',
       detalle:
-        'Integrada por todos los accionistas inscritos en el Libro de Registro de Acciones. Se reúne ordinariamente al menos una vez al año dentro del primer trimestre para aprobar estados financieros y decidir sobre distribución de utilidades.',
+        'La sociedad actúa a través de su Representante Legal, designado conforme a los estatutos e inscrito en el Registro Mercantil. Su nombre, facultades y limitaciones constan en el certificado de existencia y representación legal que expide la Cámara de Comercio, documento que remitimos a solicitud de cualquier entidad contratante.',
+      icono: 'shield-check',
     },
     {
-      nombre: 'Representante Legal — Gerente General',
-      rol: 'Administración y representación',
+      nombre: 'Dirección técnica por encargo',
+      rol: 'Quién responde por el entregable',
       detalle:
-        'Designado por la Asamblea para períodos de dos (2) años, reelegible indefinidamente. Ejerce la representación judicial y extrajudicial y celebra los actos comprendidos en el objeto social hasta 5.000 SMMLV sin autorización previa.',
+        'Cada contrato tiene un director técnico identificado que firma los productos y responde por ellos ante la entidad. La asignación se comunica por escrito al inicio del encargo y cualquier cambio se notifica formalmente antes de que ocurra.',
+      icono: 'users',
     },
   ],
-  mayorias: [
-    { asunto: 'Reformas estatutarias', umbral: '70% de las acciones suscritas' },
-    { asunto: 'Transformación, fusión, escisión o disolución anticipada', umbral: '70%' },
-    { asunto: 'Ingreso de nuevos accionistas', umbral: '70%' },
-    { asunto: 'Creación de acciones privilegiadas', umbral: '70%' },
-    { asunto: 'Operaciones superiores a 3.000 SMMLV', umbral: '70%' },
-    { asunto: 'Pago de dividendos en acciones liberadas', umbral: '80%' },
-    { asunto: 'Decisiones ordinarias', umbral: 'Mayoría de votos presentes' },
+
+  compromisos: [
+    {
+      titulo: 'Independencia e imparcialidad',
+      texto:
+        'Antes de aceptar un encargo verificamos y declaramos por escrito cualquier situación que pueda comprometer la objetividad del equipo. Si aparece sobrevenidamente, se informa a la entidad y se aparta al profesional involucrado.',
+      icono: 'scale',
+    },
+    {
+      titulo: 'Conflictos de interés',
+      texto:
+        'No asumimos simultáneamente la consultoría y la interventoría de un mismo proyecto, ni asesoramos a dos partes con intereses contrapuestos en un mismo proceso.',
+      icono: 'eye',
+    },
+    {
+      titulo: 'Régimen anticorrupción',
+      texto:
+        'Política de cero pagos indebidos, dádivas o atenciones que puedan interpretarse como incentivo. Aplica a socios comerciales, subcontratistas y personal vinculado, y su incumplimiento termina la relación.',
+      icono: 'shield',
+    },
+    {
+      titulo: 'Protección de datos',
+      texto:
+        'Tratamiento de datos personales conforme a la Ley 1581 de 2012 y al Decreto 1074 de 2015, con autorización previa, finalidad definida y supresión al terminar el encargo.',
+      icono: 'file-text',
+    },
+    {
+      titulo: 'Gestión documental',
+      texto:
+        'Los expedientes se organizan conforme a los lineamientos del Archivo General de la Nación y se entregan indexados al cierre, de modo que la entidad conserve la trazabilidad completa.',
+      icono: 'ruler',
+    },
+    {
+      titulo: 'Confidencialidad',
+      texto:
+        'La información de la entidad no se usa para fines distintos del encargo ni se comparte con terceros, salvo requerimiento de autoridad competente. El deber subsiste después de terminado el contrato.',
+      icono: 'shield-check',
+    },
   ],
-  controles: [
-    'Reserva legal del 10% anual de las utilidades líquidas hasta alcanzar el 50% del capital suscrito.',
-    'Prohibición de constituir la sociedad en garante de obligaciones de terceros sin autorización expresa de la Asamblea.',
-    'Prohibición de firmar títulos valores sin contraprestación directa a favor de la sociedad.',
-    'Prohibición de operar en conflicto de interés sin aprobación previa de la Asamblea.',
-    'Prohibición de distribuir utilidades antes de enjugar pérdidas de ejercicios anteriores.',
-    'Derecho de preferencia estatutario en la negociación de acciones.',
-    'Cláusula compromisoria: arbitraje en derecho ante el Centro de Conciliación y Arbitraje de la Cámara de Comercio de Cartagena.',
-  ],
-  libros: [
-    'Libro de Registro de Accionistas',
-    'Libro de Actas de la Asamblea General de Accionistas',
-    'Libros de contabilidad exigidos por la ley',
+
+  controversias: {
+    titulo: 'Solución de controversias',
+    texto:
+      'Los estatutos de la sociedad incorporan cláusula compromisoria: las controversias societarias se resuelven ante un Tribunal de Arbitramento que decide en derecho, con sede en el Centro de Conciliación y Arbitraje de la Cámara de Comercio de Cartagena de Indias. En materia contractual, la firma privilegia los mecanismos alternativos de solución de conflictos antes de acudir a la vía judicial.',
+  },
+
+  documentos: [
+    'Certificado de existencia y representación legal',
+    'Registro Único Tributario (RUT)',
+    'Certificaciones de experiencia del equipo propuesto',
+    'Estados financieros y certificación del revisor fiscal o contador',
+    'Certificados de aportes al sistema de seguridad social',
+    'Pólizas y garantías exigidas por el pliego',
   ],
 }
 
-/**
- * Composición accionaria — información societaria pública.
- * Se identifican las personas jurídicas fundadoras; la participación de
- * personas naturales se reporta de forma agregada, sin datos personales.
- */
-export const composicionAccionaria = [
+/** Cifras de presentación: capacidad y método, sin contenido patrimonial. */
+export const cifras = [
   {
-    nombre: 'Fundación FUNDETERC',
-    tipo: 'Persona jurídica',
-    participacion: 25,
-    nota: 'Fundación para el desarrollo territorial, con domicilio en Cartagena de Indias.',
+    valor: '7',
+    unidad: 'líneas',
+    etiqueta: 'Áreas de especialidad',
+    detalle: 'De hacienda pública a interventoría',
   },
   {
-    nombre: 'Fundación FISEP',
-    tipo: 'Persona jurídica',
-    participacion: 25,
-    nota: 'Fundación de investigación social y estudios públicos, con domicilio en Cartagena de Indias.',
+    valor: '5',
+    unidad: 'fases',
+    etiqueta: 'Método de trabajo',
+    detalle: 'Del diagnóstico al cierre verificado',
   },
   {
-    nombre: 'INGETIC S.A.S.',
-    tipo: 'Persona jurídica',
-    participacion: 25,
-    nota: 'Sociedad de ingeniería y tecnologías de la información, con domicilio en Cartagena de Indias.',
+    valor: '4',
+    unidad: 'disciplinas',
+    etiqueta: 'Equipo multidisciplinario',
+    detalle: 'Ingeniería, derecho, finanzas y tecnología',
   },
   {
-    nombre: 'Accionista fundador — persona natural',
-    tipo: 'Persona natural',
-    participacion: 25,
-    nota: 'Participación individual. Su identificación consta en el Registro Mercantil y en el Libro de Registro de Accionistas.',
+    valor: 'Nacional',
+    unidad: '',
+    etiqueta: 'Cobertura',
+    detalle: 'Con base en Cartagena de Indias',
   },
 ]
 
-export const cifras = [
-  { valor: '100.000', unidad: 'acciones', etiqueta: 'Capital suscrito y pagado', detalle: '$100.000.000 COP' },
-  { valor: '7', unidad: 'líneas', etiqueta: 'Áreas de especialidad', detalle: 'De hacienda pública a interventoría' },
-  { valor: '4', unidad: 'socios', etiqueta: 'Accionistas fundadores', detalle: '3 personas jurídicas + 1 natural' },
-  { valor: '100%', unidad: '', etiqueta: 'Capital pagado en constitución', detalle: 'Sin capital por suscribir' },
+/** Formas de participación en procesos de contratación. */
+export const modalidades = [
+  {
+    titulo: 'Contratación directa',
+    texto:
+      'Consultoría, asesoría e interventoría contratadas directamente por la entidad o la empresa, con propuesta técnica y económica formal.',
+    icono: 'file-text',
+  },
+  {
+    titulo: 'Procesos de selección',
+    texto:
+      'Participación en licitaciones, concursos de méritos, selección abreviada y mínima cuantía, conforme a la Ley 80 de 1993 y la Ley 1150 de 2007.',
+    icono: 'gavel',
+  },
+  {
+    titulo: 'Consorcios y uniones temporales',
+    texto:
+      'Conformación de estructuras plurales con firmas aliadas cuando el objeto exige capacidad o experiencia complementaria.',
+    icono: 'heart-handshake',
+  },
+  {
+    titulo: 'Convenios y cooperación',
+    texto:
+      'Convenios interadministrativos, de asociación y proyectos con banca multilateral y cooperación internacional.',
+    icono: 'banknote',
+  },
 ]

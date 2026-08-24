@@ -3,8 +3,10 @@ import PageHero from '../components/PageHero'
 import Reveal from '../components/Reveal'
 import Icon from '../components/Icon'
 import CTA from '../components/CTA'
+import Imagen from '../components/Imagen'
 import { useSeo } from '../hooks/useSeo'
 import { servicios } from '../data/servicios'
+import { imagenServicio } from '../data/imagenes'
 
 export default function Servicios() {
   useSeo({
@@ -81,6 +83,12 @@ export default function Servicios() {
               </Reveal>
 
               <Reveal delay={120} className="lg:col-span-7">
+                <Imagen
+                  img={imagenServicio(s.slug)}
+                  aspecto="3 / 2"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="mb-6 w-full rounded-2xl border border-marina-200/70 shadow-card"
+                />
                 <div className="rounded-2xl border border-marina-200/70 bg-white p-7 shadow-card sm:p-8">
                   <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-marina-500">
                     Entregables típicos

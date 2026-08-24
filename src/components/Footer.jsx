@@ -61,7 +61,7 @@ export default function Footer() {
             {[
               ['/nosotros', 'Nosotros'],
               ['/metodologia', 'Metodología'],
-              ['/gobierno-corporativo', 'Gobierno corporativo'],
+              ['/gobierno-corporativo', 'Gobierno y cumplimiento'],
               ['/contacto', 'Contacto'],
               ['/legal/tratamiento-de-datos', 'Tratamiento de datos'],
               ['/legal/terminos', 'Términos de uso'],
