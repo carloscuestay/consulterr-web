@@ -1,0 +1,35 @@
+CARPETA PARA FOTOGRAFÍAS REALES
+================================
+
+Las imágenes que hoy usa el portal son ILUSTRACIONES ORIGINALES creadas para
+CONSULTERR S.A.S. Para sustituirlas por fotografías:
+
+1. Deje aquí la foto con el nombre exacto que aparece abajo, en formato .jpg
+2. Abra  src/data/imagenes.js  y cambie  foto: false  por  foto: true
+   en la entrada correspondiente
+3. Actualice el campo `alt` con la descripción de la foto real, y `credito`
+   con el autor y la licencia si la imagen es de un tercero
+
+CARRUSEL DEL INICIO  (2400 × 1350 px, proporción 16:9)
+  carrusel-obra-civil.jpg        Obra civil / infraestructura en construcción
+  carrusel-agua-potable.jpg      Planta de tratamiento de agua o acueducto
+  carrusel-puerto.jpg            Puerto, actividad marítima o Cartagena
+  carrusel-territorio.jpg        Paisaje territorial, cartografía, topografía
+  carrusel-ciudad-datos.jpg      Ciudad, gestión pública, análisis de datos
+
+LÍNEAS DE SERVICIO  (1200 × 800 px, proporción 3:2)
+  servicio-hacienda-publica.jpg
+  servicio-tecnologia-e-ia.jpg
+  servicio-planeacion-territorial.jpg
+  servicio-servicios-publicos-y-ambiente.jpg
+  servicio-consultoria-juridica.jpg
+  servicio-financiera-social-y-empresarial.jpg
+  servicio-interventoria-y-supervision.jpg
+
+IMPORTANTE
+  · Verifique que la licencia permita el uso comercial.
+  · Conserve la constancia de la licencia junto con el archivo original.
+  · Si la foto exige atribución, diligencie el campo `credito`: el portal la
+    muestra sobre la imagen.
+  · Comprima las fotos antes de subirlas (calidad 80-85) para no afectar la
+    velocidad de carga del sitio.
